@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getProducts, getSocial, getClicks } from '@/lib/data';
 import ProductCard from '@/components/ProductCard';
 import WhatsappFloat from '@/components/WhatsappFloat';
+export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   const products = getProducts();
