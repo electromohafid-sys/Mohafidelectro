@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
       </div>
       <h3 className="font-bold mb-1">{product.name}</h3>
       <div className="text-gray-400 text-xs font-mono mb-2" dir="ltr">{product.spec}</div>
-      <div className="font-mono font-semibold text-lg">{Number(product.price).toLocaleString('en-US')} ج.م</div>
+      <div className="font-mono font-semibold text-lg">{Number(product.price).toLocaleString('en-US')} درهم</div>
     </Link>
   );
           }
