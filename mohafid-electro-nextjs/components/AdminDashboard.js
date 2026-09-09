@@ -37,7 +37,7 @@ export default function AdminDashboard() {
 
   async function submitProduct(e) {
     e.preventDefault();
-    const payload = { name: form.name, cat: form.cat, price: Number(form.price), stock: form.stock, spec: form.spec, desc: form.desc };
+    const payload = { name: form.name, cat: form.cat, price: Number(form.price), stock: form.stock, spec: form.spec, desc: form.desc, image: form.image };
     if (form.id) {
       await fetch(`/api/products/${form.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       toast('تم تحديث المنتج');
@@ -50,7 +50,7 @@ export default function AdminDashboard() {
   }
 
   function editProduct(p) {
-    setForm({ id: p.id, name: p.name, cat: p.cat, price: p.price, stock: p.stock, spec: p.spec, desc: p.desc || '' });
+    setForm({ id: p.id, name: p.name, cat: p.cat, price: p.price, stock: p.stock, spec: p.spec, desc: p.desc || '', image: p.image || '' });
     setTab('products');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -149,6 +149,7 @@ export default function AdminDashboard() {
                     <option value="out">غير متوفر</option>
                   </select>
                   <input placeholder="مواصفات مختصرة" value={form.spec} onChange={(e) => setForm({ ...form, spec: e.target.value })} className="bg-panel2 border border-border rounded-lg p-2.5 md:col-span-2" />
+                  <input placeholder="رابط الصورة (اختياري)" value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })} className="bg-panel2 border border-border rounded-lg p-2.5 md:col-span-2" />
                   <textarea placeholder="وصف المنتج" value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })} className="bg-panel2 border border-border rounded-lg p-2.5 md:col-span-2" />
                   <div className="flex gap-2 md:col-span-2">
                     <button className="bg-accent text-[#1A1305] font-bold rounded-lg px-5 py-2.5">{form.id ? 'حفظ التعديل' : 'إضافة المنتج'}</button>
