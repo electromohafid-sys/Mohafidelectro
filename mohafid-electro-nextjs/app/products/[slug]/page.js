@@ -39,7 +39,7 @@ export default function ProductDetailPage({ params }) {
     offers: {
       '@type': 'Offer',
       price: product.price,
-      priceCurrency: 'EGP',
+      priceCurrency: 'MAD',
       availability: product.stock === 'in' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'
     }
   };
@@ -65,7 +65,7 @@ export default function ProductDetailPage({ params }) {
           <div>
             <div className="text-accent2 text-xs mb-2">{product.cat}</div>
             <h1 className="font-display text-3xl mb-3">{product.name}</h1>
-            <div className="font-mono text-2xl font-semibold mb-4">{Number(product.price).toLocaleString('en-US')} ج.م</div>
+            <div className="font-mono text-2xl font-semibold mb-4">{Number(product.price).toLocaleString('en-US')} درهم</div>
             <div className="mb-5"><StockBadge stock={product.stock} /></div>
             <p className="text-gray-400 mb-5">{product.desc}</p>
             <div className="bg-panel border border-border rounded-xl p-4 font-mono text-sm text-gray-400 mb-6" dir="ltr">{product.spec}</div>
@@ -73,7 +73,7 @@ export default function ProductDetailPage({ params }) {
               <WhatsAppOrderButton
                 productId={product.id}
                 whatsapp={social.whatsapp}
-                text={`عايز أطلب: ${product.name} - ${product.price} ج.م`}
+                text={`عايز أطلب: ${product.name} - ${product.price} درهم`}
               />
             ) : (
               <LeadModalButton productId={product.id} productName={product.name} />
@@ -92,4 +92,4 @@ export default function ProductDetailPage({ params }) {
       </div>
     </section>
   );
-}
+              }
