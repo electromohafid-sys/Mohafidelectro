@@ -52,11 +52,15 @@ export default function ProductDetailPage({ params }) {
         <Link href="/products" className="text-sm text-gray-400 hover:text-accent2">→ الرجوع لكل المنتجات</Link>
 
         <div className="grid md:grid-cols-2 gap-10 mt-6">
-          <div className="h-80 rounded-2xl bg-gradient-to-br from-[#16233B] to-[#0D1524] border border-border flex items-center justify-center">
-            <svg className="w-28 h-28 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
-              <rect x="5" y="3" width="14" height="18" rx="2" />
-              <path d="M9 7h6M9 11h6M9 15h3" />
-            </svg>
+          <div className="h-80 rounded-2xl bg-gradient-to-br from-[#16233B] to-[#0D1524] border border-border flex items-center justify-center overflow-hidden">
+            {product.image ? (
+              <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+            ) : (
+              <svg className="w-28 h-28 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                <rect x="5" y="3" width="14" height="18" rx="2" />
+                <path d="M9 7h6M9 11h6M9 15h3" />
+              </svg>
+            )}
           </div>
           <div>
             <div className="text-accent2 text-xs mb-2">{product.cat}</div>
