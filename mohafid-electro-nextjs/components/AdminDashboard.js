@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const emptyForm = { id: '', name: '', cat: '', price: '', stock: 'in', spec: '', desc: '' };
+const emptyForm = { id: '', name: '', cat: '', price: '', stock: 'in', spec: '', desc: '', image: '' };
 
 export default function AdminDashboard() {
   const router = useRouter();
