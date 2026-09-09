@@ -69,7 +69,7 @@ export default function ProductDetailPage({ params }) {
               <WhatsAppOrderButton
                 productId={product.id}
                 whatsapp={social.whatsapp}
-                text={`عايز أطلب: ${product.name} - ${product.price} ج.م`}
+                text={`أطلب الأن: ${product.name} - ${product.price} درهم`}
               />
             ) : (
               <LeadModalButton productId={product.id} productName={product.name} />
