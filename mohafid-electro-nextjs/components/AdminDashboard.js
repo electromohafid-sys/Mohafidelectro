@@ -121,7 +121,7 @@ export default function AdminDashboard() {
                   <StatCard label="إجمالي المنتجات" value={products.length} />
                   <StatCard label="متوفر الآن" value={counts.in} color="text-accent2" />
                   <StatCard label="غير متوفر" value={counts.out} color="text-danger" />
-                  <StatCard label="قيمة المخزون" value={`${value.toLocaleString('en-US')} ج.م`} />
+                  <StatCard label="قيمة المخزون" value={`${value.toLocaleString('en-US')} درهم`} />
                 </div>
                 <div className="bg-panel border border-border rounded-2xl p-5 mb-6">
                   <h3 className="font-bold mb-4">توزيع المنتجات حسب القسم</h3>
