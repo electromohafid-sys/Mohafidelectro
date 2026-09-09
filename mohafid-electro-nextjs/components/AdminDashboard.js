@@ -69,8 +69,13 @@ export default function AdminDashboard() {
 
   async function submitSocial(e) {
     e.preventDefault();
-    await fetch('/api/social', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(social) });
-    toast('تم حفظ الروابط');
+    const res = await fetch('/api/social', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(social) });
+    if (res.ok) {
+      toast('تم حفظ الروابط');
+    } else {
+      const err = await res.json().catch(() => ({}));
+      toast('فشل الحفظ (' + res.status + '): ' + (err.error || 'خطأ غير معروف'));
+    }
   }
 
   const counts = { in: 0, out: 0, soon: 0 };
