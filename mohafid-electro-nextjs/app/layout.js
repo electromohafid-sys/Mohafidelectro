@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getSocial, getProducts } from '@/lib/data';
+export const dynamic = 'force-dynamic';
 
 const almarai = Almarai({ subsets: ['arabic'], weight: ['700', '800'], variable: '--font-display' });
 const tajawal = Tajawal({ subsets: ['arabic'], weight: ['400', '500', '700'], variable: '--font-body' });
