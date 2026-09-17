@@ -70,11 +70,19 @@ export default function ProductDetailPage({ params }) {
             <p className="text-gray-400 mb-5">{product.desc}</p>
             <div className="bg-panel border border-border rounded-xl p-4 font-mono text-sm text-gray-400 mb-6" dir="ltr">{product.spec}</div>
             {product.stock === 'in' ? (
-              <WhatsAppOrderButton
-                productId={product.id}
-                whatsapp={social.whatsapp}
-                text={`عايز أطلب: ${product.name} - ${product.price} درهم`}
-              />
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href={`/checkout/${product.slug}`}
+                  className="inline-flex bg-accent text-[#1A1305] font-bold px-6 py-3 rounded-lg"
+                >
+                  إتمام الشراء (دفع عند الاستلام)
+                </Link>
+                <WhatsAppOrderButton
+                  productId={product.id}
+                  whatsapp={social.whatsapp}
+                  text={`عايز أطلب: ${product.name} - ${product.price} درهم`}
+                />
+              </div>
             ) : (
               <LeadModalButton productId={product.id} productName={product.name} />
             )}
