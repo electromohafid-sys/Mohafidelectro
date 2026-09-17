@@ -13,7 +13,7 @@ export default function ProductCard({ product }) {
       </div>
       <div className="h-28 rounded-xl bg-gradient-to-br from-[#16233B] to-[#0D1524] border border-border flex items-center justify-center mb-3 overflow-hidden">
         {product.image ? (
-          <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+          <img src={product.image} alt={product.name} className="w-full h-full object-contain p-2" />
         ) : (
           <svg className="w-11 h-11 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
             <rect x="5" y="3" width="14" height="18" rx="2" />
