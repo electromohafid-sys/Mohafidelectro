@@ -19,6 +19,7 @@ export default function Header({ whatsapp }) {
         <nav className="hidden md:flex items-center gap-7 text-gray-400 font-medium">
           <Link href="/" className="hover:text-accent2">الرئيسية</Link>
           <Link href="/products" className="hover:text-accent2">كل المنتجات</Link>
+          <Link href="/account" className="hover:text-accent2">طلباتي</Link>
           <a href="/#why" className="hover:text-accent2">ليه محافظ إلكترو</a>
           <a href="/#contact" className="hover:text-accent2">تواصل معنا</a>
         </nav>
@@ -31,6 +32,7 @@ export default function Header({ whatsapp }) {
         <nav className="md:hidden flex flex-col gap-4 p-5 bg-panel border-b border-border">
           <Link href="/" onClick={() => setOpen(false)}>الرئيسية</Link>
           <Link href="/products" onClick={() => setOpen(false)}>كل المنتجات</Link>
+          <Link href="/account" onClick={() => setOpen(false)}>طلباتي</Link>
           <a href="/#why" onClick={() => setOpen(false)}>ليه محافظ إلكترو</a>
           <a href="/#contact" onClick={() => setOpen(false)}>تواصل معنا</a>
         </nav>
