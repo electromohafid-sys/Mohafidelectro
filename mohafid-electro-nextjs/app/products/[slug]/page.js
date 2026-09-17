@@ -54,7 +54,7 @@ export default function ProductDetailPage({ params }) {
         <div className="grid md:grid-cols-2 gap-10 mt-6">
           <div className="h-80 rounded-2xl bg-gradient-to-br from-[#16233B] to-[#0D1524] border border-border flex items-center justify-center overflow-hidden">
             {product.image ? (
-              <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+              <img src={product.image} alt={product.name} className="w-full h-full object-contain p-3" />
             ) : (
               <svg className="w-28 h-28 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                 <rect x="5" y="3" width="14" height="18" rx="2" />
