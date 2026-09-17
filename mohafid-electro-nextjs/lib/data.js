@@ -30,6 +30,12 @@ export function saveLeads(leads) { writeJSON('leads.json', leads); }
 export function getClicks() { return readJSON('clicks.json', {}); }
 export function saveClicks(clicks) { writeJSON('clicks.json', clicks); }
 
+export function getCustomers() { return readJSON('customers.json', []); }
+export function saveCustomers(customers) { writeJSON('customers.json', customers); }
+
+export function getOrders() { return readJSON('orders.json', []); }
+export function saveOrders(orders) { writeJSON('orders.json', orders); }
+
 export function slugify(name, idSuffix = '') {
   const base = name
     .trim()
